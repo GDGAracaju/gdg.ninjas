@@ -1,0 +1,19 @@
+{
+  "name": "gdg.ninjas",
+  "version": "0.0.0",
+  "authors": [
+    "GDG Aracaju <gdgaracaju@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.5"
+  }
+}
