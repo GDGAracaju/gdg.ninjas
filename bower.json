@@ -9,11 +9,11 @@
     "**/.*",
     "node_modules",
     "bower_components",
-    "public/bower_components",
     "test",
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.0.5"
+    "material-design-lite": "~1.0.5",
+    "traceur-runtime": "~0.0.92"
   }
 }

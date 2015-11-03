@@ -1,1 +1,26 @@
-{"private": true,"dependencies": {"bower": "*"}, "scripts": {"postinstall": "bower install"}}
+{
+  "private": true,
+  "dependencies": {
+    "bower": "*",
+    "systemjs": "^0.19.5"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "gulp": "gulp"
+  },
+  "devDependencies": {
+    "angular2": "^2.0.0-alpha.45",
+    "connect": "^3.4.0",
+    "del": "^2.0.2",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-less": "^3.0.3",
+    "gulp-merge": "^0.1.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.9.2",
+    "main-bower-files": "^2.9.0",
+    "open": "0.0.5",
+    "serve-static": "^1.10.0"
+  }
+}
