@@ -5,7 +5,8 @@ var merge = require('gulp-merge');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var ts = require('gulp-typescript');
-var less = require('gulp-less');
+// var less = require('gulp-less');
+var sass = require('gulp-sass');
 
 var mainBowerFiles = require('main-bower-files');
 var del = require('del');
@@ -17,7 +18,7 @@ var PATH = {
   src: {
     html: 'src/**/*.html',
     ts: 'src/**/*.ts',
-    less: 'src/**/*.less',
+    sass: 'src/*.scss',
     libs: {
       systemjs: './node_modules/systemjs/dist/system.src.js',
       angular2: [
@@ -30,7 +31,7 @@ var PATH = {
     html: './public',
     ts: './public/js',
     libs: './public/libs',
-    less: './public/css'
+    sass: './public/css'
   }
 }
 
@@ -44,14 +45,22 @@ gulp.task('html', function() {
     .pipe(gulp.dest(PATH.dest.html));
 });
 
-gulp.task('less', function() {
-  return gulp.src(PATH.src.less)
-    .pipe(less({
-      paths: [ path.join(__dirname, 'less', 'includes') ]
+gulp.task('sass', function () {
+ gulp.src(PATH.dest.sass)
+   .pipe(sass({
+      outputStyle: 'compressed'
     }))
-    .pipe(concat('all.css'))
-    .pipe(gulp.dest(PATH.dest.less));
+   .pipe(gulp.dest(PATH.dest.sass));
 });
+
+// gulp.task('less', function() {
+//   return gulp.src(PATH.src.less)
+//     .pipe(less({
+//       paths: [ path.join(__dirname, 'less', 'includes') ]
+//     }))
+//     .pipe(concat('all.css'))
+//     .pipe(gulp.dest(PATH.dest.less));
+// });
 
 gulp.task('libs', function() {
   var systemjs = gulp.src(PATH.src.libs.systemjs).pipe(rename('system.js'));
@@ -81,7 +90,7 @@ gulp.task('script', function() {
 
 var watch = function() {
   gulp.watch(PATH.src.html, ['html']);
-  gulp.watch(PATH.src.less, ['less']);
+  gulp.watch(PATH.src.sass, ['sass']);
   gulp.watch(PATH.src.ts, ['script']);
 }
 
@@ -108,10 +117,10 @@ gulp.task('clean', function() {
   return del([
     PATH.dest.html,
     PATH.dest.ts,
-    PATH.dest.less
+    PATH.dest.sass
   ]);
 });
 
 gulp.task('play', ['default', 'serve']);
 
-gulp.task('default', ['html', 'less', 'libs', 'script']);
+gulp.task('default', ['html', 'sass', 'watch', 'libs', 'script']);

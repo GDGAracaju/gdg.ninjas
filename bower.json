@@ -13,7 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "material-design-lite": "~1.0.5",
     "traceur-runtime": "~0.0.92"
   }
 }
