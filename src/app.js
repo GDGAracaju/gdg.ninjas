@@ -17,7 +17,7 @@ var App = (function () {
             selector: 'my-app'
         }),
         angular2_1.View({
-            template: "<h1>Hello {{ name }}</h1>"
+            template: "<h3>Hello {{ name }}</h3>"
         }), 
         __metadata('design:paramtypes', [])
     ], App);

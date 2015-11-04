@@ -22,43 +22,31 @@
 
 	<!-- Page styles -->
 	<link href='//fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en' rel='stylesheet' type='text/css'>
-	<script src="libs/bowerJS.js"></script>
-	<script src="libs/system.js"></script>
-
-	<link rel="stylesheet" href="libs/bowerCSS.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 	<link rel="stylesheet" href="css/all.css">
-
-	<script>
-			System.config({
-					defaultJSExtensions: true
-			});
-	</script>
-
-	<script src="libs/angular2.js"></script>
+	<link rel="stylesheet" href="libs/bowerCSS.css">
 </head>
 <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-	<my-app></my-app>
-
-	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+	<div class="mdl-layout__container has-scrolling-header"><div class="mdl-layout mdl-js-layout mdl-layout--fixed-header has-tabs is-upgraded" data-upgraded=",MaterialLayout">
 		<header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
 			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
 			</div>
 			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
-				<h3>Name &amp; Title</h3>
+				<my-app></my-app><!-- app - angular2 -->
 			</div>
 			<div class="mdl-layout--large-screen-only mdl-layout__header-row">
 			</div>
-			<div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
-				<a href="#overview" class="mdl-layout__tab is-active">Overview</a>
-				<a href="#features" class="mdl-layout__tab">Features</a>
-				<a href="#features" class="mdl-layout__tab">Details</a>
-				<a href="#features" class="mdl-layout__tab">Technology</a>
-				<a href="#features" class="mdl-layout__tab">FAQ</a>
-				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add">
+			<div class="mdl-layout__tab-bar-container"><div class="mdl-layout__tab-bar-button mdl-layout__tab-bar-left-button"><i class="material-icons">chevron_left</i></div><div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark mdl-js-ripple-effect--ignore-events" data-upgraded=",MaterialRipple">
+				<a href="#overview" class="mdl-layout__tab is-active">Overview<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></a>
+				<a href="#features" class="mdl-layout__tab">Features<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></a>
+				<a href="#features" class="mdl-layout__tab">Details<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></a>
+				<a href="#features" class="mdl-layout__tab">Technology<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></a>
+				<a href="#features" class="mdl-layout__tab">FAQ<span class="mdl-layout__tab-ripple-container mdl-js-ripple-effect" data-upgraded=",MaterialRipple"><span class="mdl-ripple"></span></span></a>
+				<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent" id="add" data-upgraded=",MaterialButton,MaterialRipple">
 					<i class="material-icons" role="presentation">add</i>
 					<span class="visuallyhidden">Add</span>
-				</button>
-			</div>
+				<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+			</div><div class="mdl-layout__tab-bar-button mdl-layout__tab-bar-right-button"><i class="material-icons">chevron_right</i></div></div>
 		</header>
 		<main class="mdl-layout__content">
 			<div class="mdl-layout__tab-panel is-active" id="overview">
@@ -75,14 +63,14 @@
 							<a href="#" class="mdl-button">Read our features</a>
 						</div>
 					</div>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
 						<i class="material-icons">more_vert</i>
-					</button>
-					<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1">
-						<li class="mdl-menu__item">Lorem</li>
-						<li class="mdl-menu__item" disabled>Ipsum</li>
-						<li class="mdl-menu__item">Dolor</li>
-					</ul>
+					<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+					<div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
+						<li class="mdl-menu__item" tabindex="-1">Lorem</li>
+						<li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+						<li class="mdl-menu__item" tabindex="-1">Dolor</li>
+					</ul></div>
 				</section>
 				<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 					<div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -114,14 +102,14 @@
 							<a href="#" class="mdl-button">Read our features</a>
 						</div>
 					</div>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn2" data-upgraded=",MaterialButton,MaterialRipple">
 						<i class="material-icons">more_vert</i>
-					</button>
-					<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2">
-						<li class="mdl-menu__item">Lorem</li>
-						<li class="mdl-menu__item" disabled>Ipsum</li>
-						<li class="mdl-menu__item">Dolor</li>
-					</ul>
+					<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+					<div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn2" data-upgraded=",MaterialMenu">
+						<li class="mdl-menu__item" tabindex="-1">Lorem</li>
+						<li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+						<li class="mdl-menu__item" tabindex="-1">Dolor</li>
+					</ul></div>
 				</section>
 				<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
 					<div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -133,14 +121,14 @@
 							<a href="#" class="mdl-button">Read our features</a>
 						</div>
 					</div>
-					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3">
+					<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
 						<i class="material-icons">more_vert</i>
-					</button>
-					<ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3">
-						<li class="mdl-menu__item">Lorem</li>
-						<li class="mdl-menu__item" disabled>Ipsum</li>
-						<li class="mdl-menu__item">Dolor</li>
-					</ul>
+					<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+					<div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div><ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
+						<li class="mdl-menu__item" tabindex="-1">Lorem</li>
+						<li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
+						<li class="mdl-menu__item" tabindex="-1">Dolor</li>
+					</ul></div>
 				</section>
 				<section class="section--footer mdl-color--white mdl-grid">
 					<div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
@@ -217,7 +205,7 @@
 			<footer class="mdl-mega-footer">
 				<div class="mdl-mega-footer--middle-section">
 					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="">
 						<h1 class="mdl-mega-footer--heading">Features</h1>
 						<ul class="mdl-mega-footer--link-list">
 							<li><a href="#">About</a></li>
@@ -227,7 +215,7 @@
 						</ul>
 					</div>
 					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="">
 						<h1 class="mdl-mega-footer--heading">Details</h1>
 						<ul class="mdl-mega-footer--link-list">
 							<li><a href="#">Spec</a></li>
@@ -236,7 +224,7 @@
 						</ul>
 					</div>
 					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="">
 						<h1 class="mdl-mega-footer--heading">Technology</h1>
 						<ul class="mdl-mega-footer--link-list">
 							<li><a href="#">How it works</a></li>
@@ -247,7 +235,7 @@
 						</ul>
 					</div>
 					<div class="mdl-mega-footer--drop-down-section">
-						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked>
+						<input class="mdl-mega-footer--heading-checkbox" type="checkbox" checked="">
 						<h1 class="mdl-mega-footer--heading">FAQ</h1>
 						<ul class="mdl-mega-footer--link-list">
 							<li><a href="#">Questions</a></li>
@@ -268,8 +256,17 @@
 				</div>
 			</footer>
 		</main>
-	</div>
+	</div></div>
 
+	<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<script src="libs/bowerJS.js"></script>
+	<script src="libs/system.js"></script>
+	<script>
+		System.config({
+				defaultJSExtensions: true
+		});
+	</script>
+	<script src="libs/angular2.js"></script>
 	<script>System.import('js/all');</script>
 </body>
 </html>
