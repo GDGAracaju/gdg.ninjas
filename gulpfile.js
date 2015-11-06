@@ -1,3 +1,4 @@
+'use strict';
 var gulp = require('gulp');
 
 var sourcemaps = require('gulp-sourcemaps');
@@ -18,9 +19,10 @@ var PATH = {
   src: {
     html: 'src/**/*.html',
     ts: 'src/**/*.ts',
-    sass: 'src/*.scss',
+    sass: 'src/**/*.scss',
     libs: {
       systemjs: './node_modules/systemjs/dist/system.src.js',
+      materiallite: 'src/**/material.min.js',
       angular2: [
         './node_modules/angular2/bundles/angular2.js',
         './node_modules/angular2/bundles/http.js'
@@ -46,32 +48,27 @@ gulp.task('html', function() {
 });
 
 gulp.task('sass', function () {
- gulp.src(PATH.dest.sass)
-   .pipe(sass({
-      outputStyle: 'compressed'
-    }))
-   .pipe(gulp.dest(PATH.dest.sass));
-});
+  var opts = {
+                errLogToConsole: true,
+                outputStyle: 'expanded'
+              };
+ gulp.src(PATH.src.sass)
+    .pipe(sass(opts).on('error', sass.logError))
+    //.pipe(concat('all.css'))
+    .pipe(gulp.dest(PATH.dest.sass));
 
-// gulp.task('less', function() {
-//   return gulp.src(PATH.src.less)
-//     .pipe(less({
-//       paths: [ path.join(__dirname, 'less', 'includes') ]
-//     }))
-//     .pipe(concat('all.css'))
-//     .pipe(gulp.dest(PATH.dest.less));
-// });
+});
 
 gulp.task('libs', function() {
   var systemjs = gulp.src(PATH.src.libs.systemjs).pipe(rename('system.js'));
   var angular2 = gulp.src(PATH.src.libs.angular2);
+  var materiallite = gulp.src(PATH.src.libs.materiallite);
   var bowerJS = gulp.src(mainBowerFiles({ filter: '**/*.js'})).pipe(concat('bowerJS.js'));
-  var bowerCSS = gulp.src(mainBowerFiles({ filter: '**/*.css'})).pipe(concat('bowerCSS.css'));
+
   return merge([
     systemjs,
     angular2,
-    bowerJS,
-    bowerCSS
+    bowerJS
   ])
   .pipe(gulp.dest(PATH.dest.libs));
 });
