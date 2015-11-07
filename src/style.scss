@@ -41,7 +41,51 @@ html, body {
 	padding: 0;
 }
 
-.mdl-demo {
+.gdg-aracaju {
+	@extend .mdl-color--grey-100;
+	@extend .mdl-color-text--grey-700;
+	@extend .mdl-base;
+	
+
+	.gdg-aracaju-container {
+		@extend .mdl-layout__container;
+		@extend .has-scrolling-header;
+	}
+
+	.gdg-aracaju-content {
+		@extend .mdl-layout;
+		@extend .mdl-js-layout;
+		@extend .mdl-layout--fixed-header;
+		@extend .has-tabs;
+		@extend .is-upgraded;
+
+		&>header {
+			@extend .mdl-layout__header;
+			@extend .mdl-layout__header--scroll;
+			@extend .mdl-color--primary;
+
+			&> .title-highlighted {
+				@extend .mdl-layout--large-screen-only;
+				@extend .mdl-layout__header-row;
+				padding-top: 5em;
+				padding-bottom: 5em;
+			}
+
+			&> .top-menu {
+				@extend .mdl-layout__tab-bar-container;
+
+				&> .top-menu-back {
+					@extend .mdl-layout__tab-bar-button;
+					@extend .mdl-layout__tab-bar-left-button;
+				}
+
+				&> .top-menu-next {
+					@extend .mdl-layout__tab-bar-button;
+					@extend .mdl-layout__tab-bar-right-button;
+				}
+			}
+		}
+	}
 
 	.mdl-layout__header-row {
 		padding-left: 40px;
