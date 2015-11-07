@@ -2,18 +2,10 @@
 
 import {Component, View, bootstrap} from 'angular2/angular2';
 
-@Component({
-    selector: 'my-app'
-})
-@View({
-  template: `<h3>Hello {{ name }}</h3>`
-})
-class App {
-  name: string;
+import {Http} from 'angular2/http';
 
-  constructor() {
-    this.name = "World";
-  }
-}
+import {CalendarService} from './google-calendar/calendar.service';
 
-bootstrap(App);
+import {GdgCalendarComponent} from './google-calendar/calendar.component';
+
+bootstrap(GdgCalendarComponent, [CalendarService]);

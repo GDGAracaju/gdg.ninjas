@@ -18,15 +18,13 @@ var tsProject = ts.createProject('tsconfig.json');
 var PATH = {
   src: {
     html: 'src/**/*.html',
-    ts: 'src/**/*.ts',
+    ts: ['./src/app.ts', './src/google-calendar/**.ts'],
     sass: 'src/**/*.scss',
     libs: {
       systemjs: './node_modules/systemjs/dist/system.src.js',
       materiallite: 'src/**/material.min.js',
-      angular2: [
-        './node_modules/angular2/bundles/angular2.js',
-        './node_modules/angular2/bundles/http.js'
-      ]
+      angular2: './node_modules/angular2/bundles/angular2.js',
+      angular2http:   './node_modules/angular2/bundles/http.js'
     }
   },
   dest: {
@@ -38,7 +36,6 @@ var PATH = {
 }
 
 var onError = function(err) {
-  hasError = true;
   console.log(err.message);
 }
 
@@ -54,7 +51,6 @@ gulp.task('sass', function () {
               };
  gulp.src(PATH.src.sass)
     .pipe(sass(opts).on('error', sass.logError))
-    //.pipe(concat('all.css'))
     .pipe(gulp.dest(PATH.dest.sass));
 
 });
@@ -62,12 +58,14 @@ gulp.task('sass', function () {
 gulp.task('libs', function() {
   var systemjs = gulp.src(PATH.src.libs.systemjs).pipe(rename('system.js'));
   var angular2 = gulp.src(PATH.src.libs.angular2);
+  var angular2http = gulp.src(PATH.src.libs.angular2http);
   var materiallite = gulp.src(PATH.src.libs.materiallite);
   var bowerJS = gulp.src(mainBowerFiles({ filter: '**/*.js'})).pipe(concat('bowerJS.js'));
 
   return merge([
     systemjs,
     angular2,
+    angular2http,
     bowerJS
   ])
   .pipe(gulp.dest(PATH.dest.libs));
@@ -118,6 +116,6 @@ gulp.task('clean', function() {
   ]);
 });
 
-gulp.task('play', ['default', 'serve']);
+gulp.task('play', ['default', 'watch', 'serve']);
 
-gulp.task('default', ['html', 'sass', 'watch', 'libs', 'script']);
+gulp.task('default', ['html', 'sass', 'libs', 'script']);

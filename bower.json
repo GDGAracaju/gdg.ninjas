@@ -14,5 +14,8 @@
   ],
   "dependencies": {
     "traceur-runtime": "~0.0.92"
+  },
+  "devDependencies": {
+    "restangular": "~1.5.1"
   }
 }
