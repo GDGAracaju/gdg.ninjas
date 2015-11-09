@@ -7,20 +7,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var angular2_1 = require('angular2/angular2');
-var App = (function () {
-    function App() {
-        this.name = "World";
+var angular2_1 = require("angular2/angular2");
+var angular2_2 = require("angular2/angular2");
+var GdgApp = (function () {
+    function GdgApp() {
+        this.siteName = "GDG Aracaju";
     }
-    App = __decorate([
-        angular2_1.Component({
-            selector: 'my-app'
+    GdgApp = __decorate([
+        angular2_2.Component({
+            selector: "gdg-app"
         }),
-        angular2_1.View({
-            template: "<h3>Hello {{ name }}</h3>"
+        angular2_2.View({
+            templateUrl: "./app/app.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], App);
-    return App;
+    ], GdgApp);
+    return GdgApp;
 })();
-angular2_1.bootstrap(App);
+angular2_1.bootstrap(GdgApp);

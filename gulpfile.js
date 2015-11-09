@@ -31,7 +31,7 @@ var PATH = {
   },
   dest: {
     html: './public',
-    ts: './public/js',
+    ts: './public',
     libs: './public/libs',
     sass: './public/css'
   }
@@ -79,10 +79,10 @@ gulp.task('script', function() {
     .pipe(ts(tsProject))
     .on('error', onError);
 
-  return merge([
-    tsResult.js.pipe(concat('all.js')).pipe(sourcemaps.write('.')).pipe(gulp.dest(PATH.dest.ts)),
-    tsResult.js.pipe(concat('all.js')).pipe(gulp.dest(PATH.dest.ts))
-    ]);
+    return merge([
+        tsResult.js.pipe(sourcemaps.write('.')),
+        tsResult.js
+      ]).pipe(gulp.dest(PATH.dest.ts));
 });
 
 var watch = function() {
