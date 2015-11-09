@@ -8,23 +8,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require("angular2/angular2");
-var angular2_2 = require("angular2/angular2");
-var header_1 = require("./components/header/header");
-var container_1 = require("./components/container/container");
-var GdgApp = (function () {
-    function GdgApp() {
-        this.siteName = "GDG Aracaju";
+var footer_1 = require("../footer/footer");
+var GdgContainer = (function () {
+    function GdgContainer() {
     }
-    GdgApp = __decorate([
-        angular2_2.Component({
-            selector: "gdg-app"
+    GdgContainer = __decorate([
+        angular2_1.Component({
+            selector: "gdg-container"
         }),
-        angular2_2.View({
-            templateUrl: "./app/app.html",
-            directives: [header_1.GdgHeader, container_1.GdgContainer]
+        angular2_1.View({
+            templateUrl: "./app/components/container/container.html",
+            directives: [footer_1.GdgFooter]
         }), 
         __metadata('design:paramtypes', [])
-    ], GdgApp);
-    return GdgApp;
+    ], GdgContainer);
+    return GdgContainer;
 })();
-angular2_1.bootstrap(GdgApp);
+exports.GdgContainer = GdgContainer;
