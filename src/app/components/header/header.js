@@ -8,22 +8,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require("angular2/angular2");
-var angular2_2 = require("angular2/angular2");
-var header_1 = require("./components/header/header");
-var GdgApp = (function () {
-    function GdgApp() {
-        this.siteName = "GDG Aracaju";
+var GdgHeader = (function () {
+    function GdgHeader() {
     }
-    GdgApp = __decorate([
-        angular2_2.Component({
-            selector: "gdg-app"
+    GdgHeader = __decorate([
+        angular2_1.Component({
+            selector: "gdg-header",
+            properties: ["title"]
         }),
-        angular2_2.View({
-            templateUrl: "./app/app.html",
-            directives: [header_1.GdgHeader]
+        angular2_1.View({
+            templateUrl: "./app/components/header/header.html"
         }), 
         __metadata('design:paramtypes', [])
-    ], GdgApp);
-    return GdgApp;
+    ], GdgHeader);
+    return GdgHeader;
 })();
-angular2_1.bootstrap(GdgApp);
+exports.GdgHeader = GdgHeader;
