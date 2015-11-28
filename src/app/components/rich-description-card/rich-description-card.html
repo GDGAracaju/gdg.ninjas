@@ -3,11 +3,11 @@
 </header>
 <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
   <div class="mdl-card__supporting-text">
-    <h4>Features</h4>
-    Dolore ex deserunt aute fugiat aute nulla ea sunt aliqua nisi cupidatat eu. Nostrud in laboris labore nisi amet do dolor eu fugiat consectetur elit cillum esse.
+    <h4>{{model.title}}</h4>
+    {{model.descriptionText}}
   </div>
   <div class="mdl-card__actions">
-    <a href="#" class="mdl-button">Read our features</a>
+    <a href="{{model.link.href}}" class="mdl-button">{{model.link.title}}</a>
   </div>
 </div>
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn1" data-upgraded=",MaterialButton,MaterialRipple">
@@ -15,8 +15,6 @@
 <span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
 <div class="mdl-menu__container is-upgraded"><div class="mdl-menu__outline mdl-menu--bottom-right"></div>
 <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn1" data-upgraded=",MaterialMenu">
-  <li class="mdl-menu__item" tabindex="-1">Lorem</li>
-  <li class="mdl-menu__item" disabled="" tabindex="-1">Ipsum</li>
-  <li class="mdl-menu__item" tabindex="-1">Dolor</li>
+  <li *ng-for="#item of model.menu" class="mdl-menu__item" tabindex="-1">{{item.label}}</li>
 </ul>
 </div>

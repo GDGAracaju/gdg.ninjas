@@ -8,14 +8,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require("angular2/angular2");
+var models_1 = require("../commons/models");
 var GdgRichDescriptionCard = (function () {
     function GdgRichDescriptionCard() {
+        this.model = new RichDescriptionModel("Título", "Descrição", new models_1.LinkModel("Leia Mais", "#"), [new models_1.MenuItemModel("Título", "#")]);
     }
     GdgRichDescriptionCard = __decorate([
         angular2_1.Component({
             selector: "rich-description-card"
         }),
         angular2_1.View({
+            directives: [angular2_1.NgFor],
             templateUrl: "./app/components/rich-description-card/rich-description-card.html"
         }), 
         __metadata('design:paramtypes', [])
@@ -23,3 +26,12 @@ var GdgRichDescriptionCard = (function () {
     return GdgRichDescriptionCard;
 })();
 exports.GdgRichDescriptionCard = GdgRichDescriptionCard;
+var RichDescriptionModel = (function () {
+    function RichDescriptionModel(title, descriptionText, link, menu) {
+        this.title = title;
+        this.descriptionText = descriptionText;
+        this.link = link;
+        this.menu = menu;
+    }
+    return RichDescriptionModel;
+})();
