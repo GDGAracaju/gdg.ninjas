@@ -14,3 +14,12 @@ var MenuItemModel = (function () {
     return MenuItemModel;
 })();
 exports.MenuItemModel = MenuItemModel;
+var DetailItemModel = (function () {
+    function DetailItemModel(title, text, link) {
+        this.title = title;
+        this.text = text;
+        this.link = link;
+    }
+    return DetailItemModel;
+})();
+exports.DetailItemModel = DetailItemModel;

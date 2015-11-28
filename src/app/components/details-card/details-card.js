@@ -13,7 +13,11 @@ var card_button_menu_1 = require("../commons/card-button-menu/card-button-menu")
 var single_card_action_1 = require("../commons/single-card-action/single-card-action");
 var GdgDetailsCard = (function () {
     function GdgDetailsCard() {
-        this.model = new DetailsCardModel("Detalhes", new models_1.LinkModel("Leia mais", "#"), [new models_1.MenuItemModel("Item", "#")]);
+        this.model = new DetailsCardModel("Detalhes", new models_1.LinkModel("Leia mais", "#"), [new models_1.MenuItemModel("Item", "#")], [
+            new models_1.DetailItemModel("Título", "Texto Longo...", new models_1.LinkModel("Leia mais", "#")),
+            new models_1.DetailItemModel("Título", "Texto Longo...", new models_1.LinkModel("Leia mais", "#")),
+            new models_1.DetailItemModel("Título", "Texto Longo...", new models_1.LinkModel("Leia mais", "#"))
+        ]);
     }
     GdgDetailsCard = __decorate([
         angular2_1.Component({
@@ -29,10 +33,11 @@ var GdgDetailsCard = (function () {
 })();
 exports.GdgDetailsCard = GdgDetailsCard;
 var DetailsCardModel = (function () {
-    function DetailsCardModel(title, link, menu) {
+    function DetailsCardModel(title, link, menu, details) {
         this.title = title;
         this.link = link;
         this.menu = menu;
+        this.details = details;
     }
     return DetailsCardModel;
 })();

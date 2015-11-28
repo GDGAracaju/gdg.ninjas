@@ -17,3 +17,19 @@ export class MenuItemModel {
     this.href = href;
   }
 }
+
+export class DetailItemModel{
+  title: String;
+  text: String;
+  link: LinkModel;
+
+  constructor(
+    title: String,
+    text: String,
+    link: LinkModel
+  ){
+    this.title = title;
+    this.text = text;
+    this.link = link;
+  }
+}
