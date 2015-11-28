@@ -2,12 +2,16 @@ import {Component, View, NgFor} from "angular2/angular2";
 
 import {LinkModel, MenuItemModel} from "../commons/models";
 
+import {GdgCardButtonMenu} from "../commons/card-button-menu/card-button-menu";
+
+import {GdgSingleCardAction} from "../commons/single-card-action/single-card-action";
+
 @Component({
   selector: "description-card"
 })
 @View({
   templateUrl: "./app/components/description-card/description-card.html",
-  directives: [NgFor]
+  directives: [NgFor, GdgCardButtonMenu, GdgSingleCardAction]
 })
 export class GdgDescriptionCard{
   model = new DescriptionModel(

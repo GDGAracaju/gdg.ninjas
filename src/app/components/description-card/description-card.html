@@ -4,8 +4,6 @@
       <h4>{{model.title}}</h4>
       {{model.descriptionText}}
     </div>
-    <div class="mdl-card__actions">
-      <a href="{{model.link.href}}" class="mdl-button">{{model.link.title}}</a>
-    </div>
+    <single-card-action [link]="model.link"></single-card-action>
   </div>
 <card-button-menu [menu]="model.menu"></card-button-menu>

@@ -9,6 +9,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var angular2_1 = require("angular2/angular2");
 var models_1 = require("../commons/models");
+var card_button_menu_1 = require("../commons/card-button-menu/card-button-menu");
+var single_card_action_1 = require("../commons/single-card-action/single-card-action");
 var GdgDescriptionCard = (function () {
     function GdgDescriptionCard() {
         this.model = new DescriptionModel("Título", "Descrição", new models_1.LinkModel("Leia mais", "#"), [new models_1.MenuItemModel("Leia mais", "#")]);
@@ -19,7 +21,7 @@ var GdgDescriptionCard = (function () {
         }),
         angular2_1.View({
             templateUrl: "./app/components/description-card/description-card.html",
-            directives: [angular2_1.NgFor]
+            directives: [angular2_1.NgFor, card_button_menu_1.GdgCardButtonMenu, single_card_action_1.GdgSingleCardAction]
         }), 
         __metadata('design:paramtypes', [])
     ], GdgDescriptionCard);

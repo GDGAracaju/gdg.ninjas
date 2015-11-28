@@ -8,18 +8,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var angular2_1 = require("angular2/angular2");
+var models_1 = require("../commons/models");
+var card_button_menu_1 = require("../commons/card-button-menu/card-button-menu");
+var single_card_action_1 = require("../commons/single-card-action/single-card-action");
 var GdgDetailsCard = (function () {
     function GdgDetailsCard() {
+        this.model = new DetailsCardModel("Detalhes", new models_1.LinkModel("Leia mais", "#"), [new models_1.MenuItemModel("Item", "#")]);
     }
     GdgDetailsCard = __decorate([
         angular2_1.Component({
             selector: "details-card"
         }),
         angular2_1.View({
-            templateUrl: "./app/components/details-card/details-card.html"
+            templateUrl: "./app/components/details-card/details-card.html",
+            directives: [angular2_1.NgFor, card_button_menu_1.GdgCardButtonMenu, single_card_action_1.GdgSingleCardAction]
         }), 
         __metadata('design:paramtypes', [])
     ], GdgDetailsCard);
     return GdgDetailsCard;
 })();
 exports.GdgDetailsCard = GdgDetailsCard;
+var DetailsCardModel = (function () {
+    function DetailsCardModel(title, link, menu) {
+        this.title = title;
+        this.link = link;
+        this.menu = menu;
+    }
+    return DetailsCardModel;
+})();
