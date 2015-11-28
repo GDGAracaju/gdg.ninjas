@@ -41,6 +41,8 @@ html, body {
 	padding: 0;
 }
 
+
+
 .gdg-aracaju {
 	@extend .mdl-color--grey-100;
 	@extend .mdl-color-text--grey-700;
@@ -51,6 +53,19 @@ html, body {
 		@extend .mdl-layout__container;
 		@extend .has-scrolling-header;
 	}
+
+	.gdg-card {
+		 @extend section;
+		 @extend .mdl-grid--no-spacing;
+		 @extend .mdl-grid;
+		 @extend  section.section--center;
+		 @extend .mdl-shadow--2dp;
+
+		 padding: 0px;
+		 position: relative;
+		 margin-bottom: 48px;
+
+	 }
 
 	.gdg-aracaju-content {
 		@extend .mdl-layout;

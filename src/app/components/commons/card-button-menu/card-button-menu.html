@@ -1,0 +1,9 @@
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" id="btn3" data-upgraded=",MaterialButton,MaterialRipple">
+  <i class="material-icons">more_vert</i>
+<span class="mdl-button__ripple-container"><span class="mdl-ripple"></span></span></button>
+<div class="mdl-menu__container is-upgraded">
+  <div class="mdl-menu__outline mdl-menu--bottom-right"></div>
+  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right" for="btn3" data-upgraded=",MaterialMenu">
+    <li *ng-for="#item of menu" class="mdl-menu__item" tabindex="-1">{{item.label}}</li>
+  </ul>
+</div>

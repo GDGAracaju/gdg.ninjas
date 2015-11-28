@@ -1,0 +1,11 @@
+<header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+  <i class="material-icons">play_circle_filled</i>
+</header>
+<div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+  <div class="mdl-card__supporting-text">
+    <h4>{{model.title}}</h4>
+    {{model.descriptionText}}
+  </div>
+  <single-card-action [link]="model.link"></single-card-action>
+</div>
+<card-button-menu [menu]="model.menu"></card-button-menu>

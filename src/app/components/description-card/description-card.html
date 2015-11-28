@@ -1,0 +1,9 @@
+
+  <div class="mdl-card mdl-cell mdl-cell--12-col">
+    <div class="mdl-card__supporting-text">
+      <h4>{{model.title}}</h4>
+      {{model.descriptionText}}
+    </div>
+    <single-card-action [link]="model.link"></single-card-action>
+  </div>
+<card-button-menu [menu]="model.menu"></card-button-menu>
