@@ -6,7 +6,6 @@ var merge = require('gulp-merge');
 var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var ts = require('gulp-typescript');
-// var less = require('gulp-less');
 var sass = require('gulp-sass');
 
 var mainBowerFiles = require('main-bower-files');
@@ -54,7 +53,6 @@ gulp.task('sass', function () {
               };
  gulp.src(PATH.src.sass)
     .pipe(sass(opts).on('error', sass.logError))
-    //.pipe(concat('all.css'))
     .pipe(gulp.dest(PATH.dest.sass));
 
 });
@@ -81,8 +79,8 @@ gulp.task('script', function() {
 
     return merge([
         tsResult.js.pipe(sourcemaps.write('.')),
-        tsResult.js
-      ]).pipe(gulp.dest(PATH.dest.ts));
+        tsResult.js.pipe(gulp.dest(PATH.dest.ts))
+      ]);
 });
 
 var watch = function() {
@@ -118,6 +116,6 @@ gulp.task('clean', function() {
   ]);
 });
 
-gulp.task('play', ['default', 'serve']);
+gulp.task('play', ['default', 'watch', 'serve']);
 
-gulp.task('default', ['html', 'sass', 'watch', 'libs', 'script']);
+gulp.task('default', ['html', 'sass', 'libs', 'script']);
