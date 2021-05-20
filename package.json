@@ -2,7 +2,7 @@
   "private": true,
   "dependencies": {
     "bower": "*",
-    "systemjs": "^0.19.5"
+    "systemjs": "^0.21.6"
   },
   "scripts": {
     "postinstall": "bower install",
